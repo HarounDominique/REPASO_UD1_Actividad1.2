@@ -4,11 +4,13 @@
  */
 package repaso.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author mfernandez
  */
-public class Piscina {
+public class Piscina implements Serializable {
     
     private final int MAX_DIST = 2;
     
@@ -24,7 +26,7 @@ public class Piscina {
     
     
 
-    public Piscina(int long_vaso, int long_parcela, int ancho_vaso, int ancho_parcela) {
+    public Piscina(int long_vaso, int long_parcela, int ancho_vaso, int ancho_parcela){
         this.long_vaso = long_vaso;
         this.long_parcela = long_parcela;
         this.ancho_vaso = ancho_vaso;
@@ -48,7 +50,16 @@ public class Piscina {
         return aforo_temp;
         
     }
-    
-          
-    
+
+    @Override
+    public String toString() {
+        return "Piscina{" +
+                "MAX_DIST=" + MAX_DIST +
+                ", long_vaso=" + long_vaso +
+                ", long_parcela=" + long_parcela +
+                ", ancho_vaso=" + ancho_vaso +
+                ", ancho_parcela=" + ancho_parcela +
+                ", aforo=" + aforo +
+                '}';
+    }
 }
